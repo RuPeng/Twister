@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://twister" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://twister" xmlns:intf="http://twister" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://twister" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getAllPosts">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllPostsResponse">
+    <complexType>
+     <sequence>
+      <element name="getAllPostsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="verifyUser">
+    <complexType>
+     <sequence>
+      <element name="userInfo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="verifyUserResponse">
+    <complexType>
+     <sequence>
+      <element name="verifyUserReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getAllPostsResponse">
+
+      <wsdl:part element="impl:getAllPostsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="verifyUserRequest">
+
+      <wsdl:part element="impl:verifyUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="verifyUserResponse">
+
+      <wsdl:part element="impl:verifyUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllPostsRequest">
+
+      <wsdl:part element="impl:getAllPosts" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Login">
+
+      <wsdl:operation name="getAllPosts">
+
+         <wsdl:input message="impl:getAllPostsRequest" name="getAllPostsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllPostsResponse" name="getAllPostsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="verifyUser">
+
+         <wsdl:input message="impl:verifyUserRequest" name="verifyUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:verifyUserResponse" name="verifyUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="LoginSoapBinding" type="impl:Login">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getAllPosts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllPostsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllPostsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="verifyUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="verifyUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="verifyUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="LoginService">
+
+      <wsdl:port binding="impl:LoginSoapBinding" name="Login">
+
+         <wsdlsoap:address location="http://localhost:8080/TwisterServer/services/Login"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

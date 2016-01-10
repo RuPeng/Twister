@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+div {
+	margin: auto;
+	height: 250px;
+	width: 400px;
+	border-radius: 10px;
+	background-color: #99ffcc;
+}
+
+div div {
+	border-radius: 0px;
+	background-color: #00ccff;
+	height: 50px;
+	width: 300px;
+	margin-left: 50px;
+}
+
+a {
+	text-decoration: none;
+}
+
+table {
+	margin: auto;
+}
+
+.button {
+	width: 70px;
+}

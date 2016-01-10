@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="findFriends.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link type="text/css" rel="stylesheet" href="postsHome.css" />
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="checkLogin();">
+<div id="topdiv">
+		<ul>
+			<li><a href="postsHome.html">Home</a></li>
+			<li><a href="myPosts.html">Posts</a></li>
+			<li><a href="meFollow.html">MeFollow </a></li>
+			<li><a href="followMe.html"> FollowMe </a></li>
+			<li><a href="findFriends.html"> FindFriends </a></li>
+			<li><a href="javascript:logout();">Logout </a></li>
+		</ul>
+	</div>
+	<br>
+	<div>
+		<input type="text" id="name" /> <input type="button" id="searchBtn"
+			value="search" onclick="search()">
+	</div>
+	<div id="searchResult"></div>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://twister" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://twister" xmlns:intf="http://twister" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://twister" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getFollower">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getFollowerResponse">
+    <complexType>
+     <sequence>
+      <element name="getFollowerReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getFollowing">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getFollowingResponse">
+    <complexType>
+     <sequence>
+      <element name="getFollowingReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteFollow">
+    <complexType>
+     <sequence>
+      <element name="follow" type="xsd:string"/>
+      <element name="usernmae" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteFollowResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getFollowerRequest">
+
+      <wsdl:part element="impl:getFollower" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFollowingResponse">
+
+      <wsdl:part element="impl:getFollowingResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteFollowRequest">
+
+      <wsdl:part element="impl:deleteFollow" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFollowerResponse">
+
+      <wsdl:part element="impl:getFollowerResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteFollowResponse">
+
+      <wsdl:part element="impl:deleteFollowResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFollowingRequest">
+
+      <wsdl:part element="impl:getFollowing" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Follow">
+
+      <wsdl:operation name="getFollower">
+
+         <wsdl:input message="impl:getFollowerRequest" name="getFollowerRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getFollowerResponse" name="getFollowerResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getFollowing">
+
+         <wsdl:input message="impl:getFollowingRequest" name="getFollowingRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getFollowingResponse" name="getFollowingResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteFollow">
+
+         <wsdl:input message="impl:deleteFollowRequest" name="deleteFollowRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteFollowResponse" name="deleteFollowResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="FollowSoapBinding" type="impl:Follow">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getFollower">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getFollowerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getFollowerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getFollowing">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getFollowingRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getFollowingResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteFollow">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteFollowRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteFollowResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="FollowService">
+
+      <wsdl:port binding="impl:FollowSoapBinding" name="Follow">
+
+         <wsdlsoap:address location="http://localhost:8080/TwisterServer/services/Follow"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="register.css" />
+<script type="text/javascript" src="register.js"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>
+		<label for="username">User Name</label> <input type="text"
+			id="username" onblur="checkUserName()" /> <span id="UNwarning1">*user
+			name can't be empty.</span> <span id="UNwarning2">*user name must be
+			no more than 16 alphanumeric characters.</span>
+	</p>
+	<p>
+		<label for="realname">Real Name</label> <input type="text"
+			id="realname" onblur="checkRealName()" /> <span id="RNwarning1">*user
+			name can't be empty.</span> <span id="RNwarning2">*user name must be
+			no more than 16 alphanumeric characters.</span>
+	</p>
+	<p>
+		<label for="biograph">Biography</label>
+		<textarea rows="15" cols="50" id="biography" onblur="checkBio()"></textarea>
+		<span id="BIOwarning">*a short biography no more than 100
+			characters.</span>
+	</p>
+	<p>
+		<label for="emailAdd">Email-address</label> <input type="text"
+			id="emailAdd" onblur="checkEmail()" /> <span id="EAwarning">*email
+			address is not valid.</span>
+	</p>
+	<p>
+		<label for="password1">Password</label> <input type="password"
+			id="password1" onblur="checkPassword1()" /> <span id="PWwarning1">*password
+			can't be empty.</span>
+	</p>
+	<p>
+		<label for="password2">Re-enter Password</label> <input
+			type="password" id="password2" onblur="checkPassword2()" /> <span
+			id="PWwarning2">*password can't be empty.</span> <span
+			id="PWwarning3">*two inputs are not the same password.</span>
+	</p>
+	<p>
+		<input type="button" id="submitBtn" onclick="submit()" value="Submit" />
+	</p>
+</body>
+</html>
